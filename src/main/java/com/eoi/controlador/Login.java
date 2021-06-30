@@ -41,10 +41,10 @@ public class Login extends HttpServlet {
 			if(usu != null) {
 				pagDest ="datosdepartamento.jsp";
 				HttpSession session = request.getSession();
-				session.setAttribute("nomempleado",usu.getNom());
+				session.setAttribute("usuario",usu.getusuario());
 				session.setAttribute("rol", usu.getRol());
 			}else {
-				String msgerr =  "Usuario y contraseña incorrectos";
+				String msgerr =  "Usuario y/o contraseña incorrectos";
 				request.setAttribute("msgerr", msgerr);
 			}
 			
