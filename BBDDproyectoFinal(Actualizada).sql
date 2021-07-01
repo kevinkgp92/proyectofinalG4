@@ -1,0 +1,1 @@
+SELECT * FROM proyectofinal.t_miembros;

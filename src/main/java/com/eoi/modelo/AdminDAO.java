@@ -18,7 +18,6 @@ public class AdminDAO {
 		//String en el que guardamos la Sql
 		String sql = "INSERT INTO t_miembros (id_miembro, nombre_miem, contraseña, telefono, email, rol) VALUES ( ?, ?, ?, ?, ?, ?)";
 		try {
-		//Esto hasta que no creemos la clase Usuario no se corregirá el error
 		con = Conexion.getInstance().getConnection();
 		pst = con.prepareStatement(sql);
 		pst.setInt(1, user.getId_miembro());
