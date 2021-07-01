@@ -16,7 +16,7 @@ public class AdminDAO {
 		int rows=0;
 		PreparedStatement pst = null;
 		//String en el que guardamos la Sql
-		String sql = "INSERT INTO t_miembros (id_miembro, nombre_miem, contraseña, telefono, email, rol) VALUES ( ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO t_miembros (id_miembro, nombre_miem, contraseña, telefono, email, rol, viajes_realizados) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
 		try {
 		con = Conexion.getInstance().getConnection();
 		pst = con.prepareStatement(sql);
@@ -26,6 +26,7 @@ public class AdminDAO {
 		pst.setInt(4, user.getTelefono());
 		pst.setString(5, user.getEmail());
 		pst.setString(6, user.getRol());
+		pst.setString(7, user.getViajes_realizados());
 		
 		rows = pst.executeUpdate();
 		System.out.println("Registros afectados: " + rows);
@@ -65,11 +66,11 @@ public class AdminDAO {
 		
 	}
 	
-	public boolean Update(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol) {
+	public boolean Update(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
 		
-		ResultSet rs= null;
+		int rows = 0;
 		PreparedStatement pst = null;
-		String sql = "UPDATE t_miembros SET nombre_miem = ?, contraseña = ?, telefono = ?, email = ?, rol = ? WHERE id_miembro = ?";
+		String sql = "UPDATE t_miembros SET nombre_miem = ?, contraseña = ?, telefono = ?, email = ?, rol = ?, viajes_realizados = ? WHERE id_miembro = ?";
 		
 		try {
 			con = Conexion.getInstance().getConnection();
@@ -79,13 +80,14 @@ public class AdminDAO {
 			pst.setInt(3, telefono);
 			pst.setString(4, email);
 			pst.setString(5, rol);
-			pst.setInt(5, id_miembro);
+			pst.setString(6, viajes_realizados);
+			pst.setInt(7, id_miembro);
 			System.out.println("Ejecutando la query: " + sql);
+			rows = pst.executeUpdate();
+			System.out.println("Registros afectados: " + rows);
 			
-			rs = pst.executeQuery();
 			con.close();
 			pst.close();
-			
 			return true;
 			
 		} catch (SQLException e) {
@@ -98,11 +100,11 @@ public class AdminDAO {
 	}
 	
 	public Usuario findById(int id_miembro) {
-		//El interrogante significa que es el argumento que vamos a tener que recibir por lo tanto no lo conocemos
-		String sql = "SELECT * FROM t_miembros WHERE id_miembro = ?";
+		//El interrogante significa que es el argumento que vamos a tener que recibir aun no lo conocemos
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		Usuario user = new Usuario();
+		String sql = "SELECT * FROM t_miembros WHERE id_miembro = ?";
 		
 		try {
 			con=Conexion.getInstance().getConnection();
@@ -118,8 +120,9 @@ public class AdminDAO {
 				user.setTelefono(rs.getInt("telefono"));
 				user.setEmail(rs.getString("email"));
 				user.setRol(rs.getString("rol"));
+				user.setViajes_realizados(rs.getString("viajes_realizados"));
 			}
-			
+		
 			rs.close();
 			pst.close();
 			con.close();
@@ -131,6 +134,62 @@ public class AdminDAO {
 		
 		return user;
 		
+		
+	}
+	
+	public Usuario ConsultaViaje(int id_miembro) {
+		
+		Usuario user = new Usuario();
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		String sql = "SELECT nombre_miembro AND viajes_realizados FROM t_miembros WHERE id_miembro = ?";
+		try {
+			con=Conexion.getInstance().getConnection();
+			pst= con.prepareStatement(sql);
+			pst.setInt(1, id_miembro);
+			rs=pst.executeQuery();
+			
+			while(rs.next()) {
+				
+				user.setNombre_miem(rs.getString("nombre_miembro"));
+				user.setViajes_realizados(rs.getString("viajes_realizados"));
+			}
+			
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return user;
+	}
+	
+	public boolean CambioRol(int id_miembro, String rol) {
+		
+		
+		PreparedStatement pst = null;
+		
+		String sql = "UPDATE t_miembros SET rol = ? WHERE id_miembro = ?";
+		
+		try {
+			con=Conexion.getInstance().getConnection();
+			pst = con.prepareStatement(sql);
+			pst.setString(1, rol);
+			pst.setInt(2, id_miembro);
+			System.out.println("Ejecutando el Update: " + sql);
+			pst.executeUpdate();
+			
+			
+			con.close();
+			pst.close();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
 		
 	}
 	
