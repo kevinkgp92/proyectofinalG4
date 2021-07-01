@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
--- Host: localhost    Database: bbddproyectofinal
+-- Host: localhost    Database: proyectofinal
 -- ------------------------------------------------------
 -- Server version	8.0.25
 
@@ -29,6 +29,7 @@ CREATE TABLE `t_miembros` (
   `telefono` int NOT NULL,
   `email` varchar(45) NOT NULL,
   `rol` varchar(45) NOT NULL,
+  `viajes_realizados` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id_miembro`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +40,7 @@ CREATE TABLE `t_miembros` (
 
 LOCK TABLES `t_miembros` WRITE;
 /*!40000 ALTER TABLE `t_miembros` DISABLE KEYS */;
-INSERT INTO `t_miembros` VALUES (1,'Kevin','1234',123456789,'kevinkgp@gmail.com','admin'),(2,'Adran','1234',121345678,'adriannavarro@gmail.com','admin'),(3,'Angela','1234',123456789,'Angela@gmail.com','admin');
+INSERT INTO `t_miembros` VALUES (1,'Kevin','1234',123456789,'kevinkgp@gmail.com','admin',NULL),(2,'Adran','1234',121345678,'adriannavarro@gmail.com','admin',NULL),(3,'Angela','1234',123456789,'Angela@gmail.com','admin',NULL);
 /*!40000 ALTER TABLE `t_miembros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-29 16:31:47
+-- Dump completed on 2021-07-01 16:04:22
