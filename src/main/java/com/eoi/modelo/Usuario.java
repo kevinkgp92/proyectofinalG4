@@ -7,6 +7,7 @@ public class Usuario {
 	private int telefono;
 	private String email;
 	private String rol;
+	private String viajes_realizados;
 	
 	
 	public Usuario() {
@@ -14,7 +15,7 @@ public class Usuario {
 	}
 	
 	
-	public Usuario(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol) {
+	public Usuario(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
 		
 		super();
 		this.id_miembro = id_miembro;
@@ -23,6 +24,7 @@ public class Usuario {
 		this.telefono = telefono;
 		this.email = email;
 		this.rol = rol;
+		this.viajes_realizados= viajes_realizados;
 		
 	}
 
@@ -84,6 +86,16 @@ public class Usuario {
 
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+	
+
+	public String getViajes_realizados() {
+		return viajes_realizados;
+	}
+
+
+	public void setViajes_realizados(String viajes_realizados) {
+		this.viajes_realizados = viajes_realizados;
 	}
 
 

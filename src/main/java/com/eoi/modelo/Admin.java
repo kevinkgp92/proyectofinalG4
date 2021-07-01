@@ -8,6 +8,7 @@ public class Admin {
 	private int telefono;
 	private String email;
 	private String rol;
+	private String viajes_realizados;
 	
 	
 
@@ -16,7 +17,7 @@ public class Admin {
 		super();
 	}
 	
-	public Admin(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol) {
+	public Admin(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
 		
 		super();
 		this.id_miembro = id_miembro;
@@ -25,6 +26,7 @@ public class Admin {
 		this.telefono = telefono;
 		this.email = email;
 		this.rol = rol;
+		this.viajes_realizados = viajes_realizados;
 		
 	}
 	
@@ -74,6 +76,15 @@ public class Admin {
 
 	public void setRol(String rol) {
 		this.rol = rol;
+	}
+
+	
+	public String getViajes_realizados() {
+		return viajes_realizados;
+	}
+
+	public void setViajes_realizados(String viajes_realizados) {
+		this.viajes_realizados = viajes_realizados;
 	}
 
 	@Override
