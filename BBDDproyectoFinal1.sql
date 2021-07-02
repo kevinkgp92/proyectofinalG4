@@ -134,11 +134,11 @@ DROP TABLE IF EXISTS `t_viajes_detalle`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `t_viajes_detalle` (
   `idviajes_detalle` int NOT NULL AUTO_INCREMENT,
-  `viaje_foto` varchar(45) DEFAULT NULL,
-  `viaje_descripcion` varchar(45) DEFAULT NULL,
-  `viaje_titulo` varchar(45) DEFAULT NULL,
+  `viaje_foto` varchar(2000) DEFAULT NULL,
+  `viaje_descripcion` varchar(1000) DEFAULT NULL,
+  `viaje_titulo` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`idviajes_detalle`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,6 +147,7 @@ CREATE TABLE `t_viajes_detalle` (
 
 LOCK TABLES `t_viajes_detalle` WRITE;
 /*!40000 ALTER TABLE `t_viajes_detalle` DISABLE KEYS */;
+INSERT INTO `t_viajes_detalle` VALUES (16,NULL,'Disfruta de un ascenso tranquilo al pico más alto de España en este tour de 6 h por Tenerife. Sube al Teide en teleférico (con billetes sin colas) y conquista los últimos 170 m a pie. Contempla el panorama de la isla','Tenerife: tour de senderismo en el Teide'),(17,NULL,'En el corazón de la comarca de Marina Baja y acariciada por las aguas del Mediterráneo, se encuentra Benidorm. Es una de las ciudades más visitadas de Alicante por las bondades que ofrecen sus bellas playas y sus recónditas calas, siempre abrigadas por un excepcional clima mediterráneo. Su enorme oferta de ocio, la vivacidad de sus fiestas, su sabrosa gastronomía y la diversidad de sus parques temáticos la convierten en un destino perfecto para todos los públicos y en cualquier época del año.','Vacaciones en Benidorm'),(18,NULL,'Pasear por la ciudad ofrece la oportunidad de visitar alguno de sus muchos museos, un placer para descubrir la historia, la cultura y el carácter de Barcelona','Museos para visitar en Barcelona'),(19,NULL,'¿Necesitas descansar unos días de la rutina recuperar fuerza? Esta escapada es perfecta para ti, ven a Ibiza y sus cercanías a darte ese capricho que estás buscando en alguno de los mejores hoteles con Spa que hemos seleccionado especialmente para la ocasión. Los hoteles harán que consigas desconectar por completo y reponer todas las fuerzas que necesitas para volver a la rutina. Está escapada incluye alojamiento con entrada al Spa del hotel donde encontraras lo necesario para desconectar y dejar desaparecer el estrés de la rutina y saldrás totalmente renovado.','Relax en Ibiza con hotel y spa'),(20,NULL,'Algo que le ha dado fama mundial a La Rioja, son sus vinos. Su Denominación de Origen, comprende una amplia variedad de vinos de sabor y olor único. Ven con nosotros a vivir una auténtica experiencia de aromas y sabores riojanos. Te llevaremos a lugares exclusivos y sin aglomeraciones. Una experiencia gastronómica y enológica única. ¡No te arrepentirás!','Experiencia gastro-enológica en La Rioja'),(21,NULL,'Visita uno de los parques de atracciones más importantes y modernos de Europa. Ahorra un tiempo precioso con tus entradas sin colas y aprovecha al máximo el día.Escapa de la cuidad ya que el parque está a solo a 25 km al sureste de Madrid. Aprovecha los mejores descuentos disponibles. ','Entradas sin colas para el Parque Warner Madrid'),(22,NULL,'Los aficionados al senderismo tienen en Cuenca un lugar de visita forzosa. La experiencia de caminar por la Serranía conquense en lugares como el nacimiento del río Cuervo o del Júcar es algo formidable. Pero una de las particularidades de esta provincia es que, desde su propia capital, parten rutas que se adentran en un paisaje donde se puede comprobar cómo los inmensos barrancos de roca caliza abrigan y abrazan a la ciudad castellano manchega. Pocas urbes permiten la posibilidad de iniciar en su casco histórico un recorrido apasionante, repleto de miradores y con una compañía muy especial: el curso del río Júcar. Estamos hablando de la ruta de la Hoz del Júcar, un sendero por el que los conquenses se relajan y desconectan y en el que los turistas disfrutamos de un paseo emocionante y lleno de sorpresas.','Ruta de la Hoz del Júcar, una caminata alrededor de Cuenca');
 /*!40000 ALTER TABLE `t_viajes_detalle` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-02 19:00:13
+-- Dump completed on 2021-07-02 19:24:16
