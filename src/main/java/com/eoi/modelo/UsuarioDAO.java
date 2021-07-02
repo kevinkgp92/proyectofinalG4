@@ -15,7 +15,7 @@ public class UsuarioDAO {
 	
 public Usuario login(String email, String contraseña) throws SQLException {
 		
-		Usuario e = null;
+		Usuario user = null;
 		
 		String sql = "SELECT * FROM t_miembros WHERE email = ? AND contraseña = ?";
 		con = Conexion.getInstance().getConnection();
@@ -27,15 +27,15 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		
 		if (rs.next()) {
 			
-			e = new Usuario();
-			e.setEmail(email);
-			e.setContraseña(contraseña);
-			e.setNombre_miem(rs.getString("nombre_miem"));
-			e.setRol(rs.getString("rol"));
+			user = new Usuario();
+			user.setEmail(email);
+			user.setContraseña(contraseña);
+			user.setNombre_miem(rs.getString("nombre_miem"));
+			user.setRol(rs.getString("rol"));
 			
 		}
 		
-		return e;
+		return user;
 		
 	}
 	
@@ -47,7 +47,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 		con = Conexion.getInstance().getConnection();
 		pst = con.prepareStatement(sql);
-		pst.setInt(1, user.getId_miembro());
+		pst.setString(1, user.getId_miembro());
 		pst.setString(2, user.getNombre_miem());
 		pst.setString(3, user.getContraseña());
 		pst.setInt(4, user.getTelefono());
@@ -69,7 +69,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 	}
 	
 	
-	public boolean Delete(int id_miembro) {
+	public boolean Delete(String id_miembro) {
 		
 		int rows = 0;
 		
@@ -77,7 +77,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 			con = Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setInt(1, id_miembro);
+			pst.setString(1, id_miembro);
 			rows= pst.executeUpdate();
 			System.out.println("Registros afectados: " + rows);
 			con.close();
@@ -93,7 +93,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		
 	}
 	
-	public boolean Update(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
+	public void Update(Usuario user) {
 		
 		int rows = 0;
 		String sql = "UPDATE t_miembros SET nombre_miem = ?, contraseña = ?, telefono = ?, email = ?, rol = ?, viajes_realizados = ? WHERE id_miembro = ?";
@@ -101,31 +101,31 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 			con = Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setString(1, nombre_miem);
-			pst.setString(2, contraseña);
-			pst.setInt(3, telefono);
-			pst.setString(4, email);
-			pst.setString(5, rol);
-			pst.setString(6, viajes_realizados);
-			pst.setInt(7, id_miembro);
+			pst.setString(1, user.getNombre_miem());
+			pst.setString(2, user.getContraseña());
+			pst.setInt(3, user.getTelefono());
+			pst.setString(4, user.getEmail());
+			pst.setString(5, user.getRol());
+			pst.setString(6, user.getViajes_realizados());
+			pst.setString(7, user.getId_miembro());
 			System.out.println("Ejecutando la query: " + sql);
 			rows = pst.executeUpdate();
 			System.out.println("Registros afectados: " + rows);
 			
 			con.close();
 			pst.close();
-			return true;
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return false;
+			
 		}
 		
 		
 	}
 	
-	public Usuario findById(int id_miembro) {
+	public Usuario findById(String id_miembro) {
 		//El interrogante significa que es el argumento que vamos a tener que recibir aun no lo conocemos
 		
 		Usuario user = new Usuario();
@@ -134,12 +134,12 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 			con=Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setInt(1, id_miembro);
+			pst.setString(1, id_miembro);
 			rs=pst.executeQuery();
 			
 			while(rs.next()) {
 				
-				user.setId_miembro(rs.getInt("id_miembro"));
+				user.setId_miembro(rs.getString("id_miembro"));
 				user.setNombre_miem(rs.getString("nombre_miembro"));
 				user.setContraseña(rs.getString("contraseña"));
 				user.setTelefono(rs.getInt("telefono"));
@@ -162,14 +162,14 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		
 	}
 	
-	public Usuario ConsultaViaje(int id_miembro) {
+	public Usuario ConsultaViaje(String id_miembro) {
 		
 		Usuario user = new Usuario();
 		String sql = "SELECT nombre_miembro AND viajes_realizados FROM t_miembros WHERE id_miembro = ?";
 		try {
 			con=Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setInt(1, id_miembro);
+			pst.setString(1, id_miembro);
 			rs=pst.executeQuery();
 			
 			while(rs.next()) {
@@ -187,7 +187,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		return user;
 	}
 	
-	public boolean CambioRol(int id_miembro, String rol) {
+	public boolean CambioRol(String id_miembro, String rol) {
 		
 		
 		String sql = "UPDATE t_miembros SET rol = ? WHERE id_miembro = ?";
@@ -196,7 +196,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			con=Conexion.getInstance().getConnection();
 			pst = con.prepareStatement(sql);
 			pst.setString(1, rol);
-			pst.setInt(2, id_miembro);
+			pst.setString(2, id_miembro);
 			System.out.println("Ejecutando el Update: " + sql);
 			pst.executeUpdate();
 			

@@ -1,7 +1,8 @@
 package com.eoi.modelo;
 
 public class Usuario {
-	private int id_miembro;
+	
+	private String id_miembro;
 	private String nombre_miem;
 	private String contraseña;
 	private int telefono;
@@ -15,7 +16,7 @@ public class Usuario {
 	}
 	
 	
-	public Usuario(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
+	public Usuario(String id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
 		
 		super();
 		this.id_miembro = id_miembro;
@@ -29,12 +30,12 @@ public class Usuario {
 	}
 
 
-	public int getId_miembro() {
+	public String getId_miembro() {
 		return id_miembro;
 	}
 
 
-	public void setId_miembro(int id_miembro) {
+	public void setId_miembro(String id_miembro) {
 		this.id_miembro = id_miembro;
 	}
 
