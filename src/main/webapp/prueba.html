@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</html>
+<form action="" method="post">
+    *Nombre: <input type="text" name="fnombre"><br>
+    Apellidos <input type="text" name="fapellidos"><br>
+    Email: <input type="email" name="femail"><br>
+    Teléfono: <input type="tel" name="ftelefono"><br>
+    Fecha de nacimiento: <input type="date" name="ffecha"><br>
+    Sexo:
+    <input type="radio" name="fsexo" value="h"> Hombre
+    <input type="radio" name="fsexo" value="m"> Mujer
+    <br>
+    Indica tu color favorito: <input type="color" name="fcolorfav" value="#a055af">
+    <br>
+    Elige tu coche favorito: 
+    <select name="fcochefav">
+        <optgroup label="Turismos">
+            <option value="Peugeot 208">Peugeot 208</option>
+            <option value="Honda Civic">Honda Civic</option>
+            <option value="Seat León">Seat León</option>
+        </optgroup>
+        <optgroup label="Todoterrenos">
+            <option value="Honda CRV">Honda CRV</option>
+            <option value="Peugeot 5008">Peugeot 5008</option>
+            <option value="Range Rover">Range Rover</option>
+        </optgroup>
+    </select>
+    <br>
+    Elija una opción: 
+    <select name="fopcion" size="4" multiple>
+        <option value="1">Uno</option>
+        <option value="2">Dos</option>
+        <option value="3">Tres</option>
+        <option value="4">Cuatro</option>
+        <option value="5">Cinco</option>
+    </select>
+    <br>
+    Aficiones:
+    <input type="checkbox" name="fcheck" checked>Música
+    <input type="checkbox" name="fcheck">Deporte
+    <input type="checkbox" name="fcheck">Motor
+    <input type="checkbox" name="fcheck">Moda
+    <br>
+    Evalúa tú opinión sobre la página: <br>
+    0 <input type="range" min="0" max="10" name="fopinion" step="5" value="10">10<br>
+    Foto: <input type="file" name="ffile"><br>
+    <input type="button" name="benviar" value="Enviar">
+    <input type="reset" name="breset" value="Limpiar">
+</form>
+
+<form action="" method="post">
+    <fieldset>
+        <legend>Datos personales</legend>
+        <p>Nombre: <input type="text" name="nombre" size="30"></p>
+        <p>Edad: <input type="number" name="edad"></p>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Cultura general</legend>
+        <p>Capital de Noruega:
+          <input type="radio" name="p1" value="1"> Copenhague
+          <input type="radio" name="p1" value="2"> Helsinki
+          <input type="radio" name="p1" value="3"> Oslo
+        </p>
+        <p>Fecha de la Revolución francesa:
+          <input type="radio" name="p2" value="1"> 1492
+          <input type="radio" name="p2" value="2"> 1789
+          <input type="radio" name="p2" value="3"> 1917
+        </p>
+      </fieldset>
+
+</form>
+</body>

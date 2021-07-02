@@ -124,6 +124,31 @@ LOCK TABLES `t_viajes` WRITE;
 INSERT INTO `t_viajes` VALUES (1,'Visita al Teide','Natural','Tenerife','Islas Canarias'),(2,'Fin de semana en Benidorm','Sol y playa','Alicante','C. Valenciana'),(3,'Museos de Barcelona','Cultural','Barcelona','Catalunya'),(4,'Relax en Ibiza','Bienestar','Ibiza','Islas Baleares'),(5,'Tour gastro-enologico en La Rioja','Gastronomico','La Rioja','La Rioja'),(6,'Visita Parque Warner en Madrid','Ocio','Madrid','Madrid'),(7,'Ruta de la Hoz del rio Jucar en Cuenca','Aventura','Cuenca','Castilla la Mancha');
 /*!40000 ALTER TABLE `t_viajes` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `t_viajes_detalle`
+--
+
+DROP TABLE IF EXISTS `t_viajes_detalle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `t_viajes_detalle` (
+  `idviajes_detalle` int NOT NULL AUTO_INCREMENT,
+  `viaje_foto` varchar(45) DEFAULT NULL,
+  `viaje_descripcion` varchar(45) DEFAULT NULL,
+  `viaje_titulo` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idviajes_detalle`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `t_viajes_detalle`
+--
+
+LOCK TABLES `t_viajes_detalle` WRITE;
+/*!40000 ALTER TABLE `t_viajes_detalle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `t_viajes_detalle` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -134,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-01 20:01:23
+-- Dump completed on 2021-07-02 18:09:35
