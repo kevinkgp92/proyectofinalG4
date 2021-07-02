@@ -17,35 +17,30 @@ import com.eoi.modelo.UsuarioDAO;
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	
 
     public Login() {
         super();
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String usuario = request.getParameter("usuario");
-		String pass = request.getParameter("pass");
+		String email = request.getParameter("email");
+		String contraseña = request.getParameter("contraseña");
 		
 		UsuarioDAO udao = new UsuarioDAO();
-		Usuario usu = null;
-		String pagDest = "index.jsp";
+		Usuario user = null;
+		String pagDest = "index.html";
 		
 		try {
-			usu = udao.login(usuario, pass);
+			user = udao.login(email, contraseña);
 			
 			//Usuario existe en la base de datos
-			if(usu != null) {
-				pagDest ="datosdepartamento.jsp";
+			if(user != null) {
+				pagDest ="datosmiembros.jsp";
 				HttpSession session = request.getSession();
-				session.setAttribute("usuario",usu.getusuario());
-				session.setAttribute("rol", usu.getRol());
+				session.setAttribute("usuario",user.getNombre_miem());
+				session.setAttribute("rol", user.getRol());
 			}else {
 				String msgerr =  "Usuario y/o contraseña incorrectos";
 				request.setAttribute("msgerr", msgerr);
