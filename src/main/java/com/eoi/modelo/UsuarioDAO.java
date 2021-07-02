@@ -7,14 +7,41 @@ import java.sql.SQLException;
 
 import com.eoi.servicios.Conexion;
 
-public class AdminDAO {
+public class UsuarioDAO {
 	
 	private Connection con;
+	private PreparedStatement pst;
+	private ResultSet rs;
+	
+public Usuario login(String email, String contraseña) throws SQLException {
+		
+		Usuario e = null;
+		
+		String sql = "SELECT * FROM t_miembros WHERE email = ? AND contraseña = ?";
+		con = Conexion.getInstance().getConnection();
+		pst = con.prepareStatement(sql);
+		pst.setString(1, email);
+		pst.setString(2, contraseña);
+		
+		rs = pst.executeQuery();
+		
+		if (rs.next()) {
+			
+			e = new Usuario();
+			e.setEmail(email);
+			e.setContraseña(contraseña);
+			e.setNombre_miem(rs.getString("nombre_miem"));
+			e.setRol(rs.getString("rol"));
+			
+		}
+		
+		return e;
+		
+	}
 	
 	public boolean Create(Usuario user) {
 		//Número de filas que van a ser modificadas después del create
 		int rows=0;
-		PreparedStatement pst = null;
 		//String en el que guardamos la Sql
 		String sql = "INSERT INTO t_miembros (id_miembro, nombre_miem, contraseña, telefono, email, rol, viajes_realizados) VALUES ( ?, ?, ?, ?, ?, ?, ?)";
 		try {
@@ -45,7 +72,7 @@ public class AdminDAO {
 	public boolean Delete(int id_miembro) {
 		
 		int rows = 0;
-		PreparedStatement pst = null;
+		
 		String sql = "DELETE FROM t_miembros WHERE id_miembro = ?";
 		try {
 			con = Conexion.getInstance().getConnection();
@@ -69,7 +96,6 @@ public class AdminDAO {
 	public boolean Update(int id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
 		
 		int rows = 0;
-		PreparedStatement pst = null;
 		String sql = "UPDATE t_miembros SET nombre_miem = ?, contraseña = ?, telefono = ?, email = ?, rol = ?, viajes_realizados = ? WHERE id_miembro = ?";
 		
 		try {
@@ -101,8 +127,7 @@ public class AdminDAO {
 	
 	public Usuario findById(int id_miembro) {
 		//El interrogante significa que es el argumento que vamos a tener que recibir aun no lo conocemos
-		PreparedStatement pst = null;
-		ResultSet rs = null;
+		
 		Usuario user = new Usuario();
 		String sql = "SELECT * FROM t_miembros WHERE id_miembro = ?";
 		
@@ -140,8 +165,6 @@ public class AdminDAO {
 	public Usuario ConsultaViaje(int id_miembro) {
 		
 		Usuario user = new Usuario();
-		PreparedStatement pst = null;
-		ResultSet rs = null;
 		String sql = "SELECT nombre_miembro AND viajes_realizados FROM t_miembros WHERE id_miembro = ?";
 		try {
 			con=Conexion.getInstance().getConnection();
@@ -166,8 +189,6 @@ public class AdminDAO {
 	
 	public boolean CambioRol(int id_miembro, String rol) {
 		
-		
-		PreparedStatement pst = null;
 		
 		String sql = "UPDATE t_miembros SET rol = ? WHERE id_miembro = ?";
 		
