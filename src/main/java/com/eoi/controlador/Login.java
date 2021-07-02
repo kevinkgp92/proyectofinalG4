@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eoi.modelo.Usuario;
+import com.eoi.modelo.UsuarioDAO;
+
 
 @WebServlet("/Login")
 public class Login extends HttpServlet {
