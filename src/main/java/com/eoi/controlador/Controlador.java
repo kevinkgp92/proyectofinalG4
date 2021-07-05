@@ -21,38 +21,28 @@ public class Controlador extends HttpServlet {
         
     }
 
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String opcion = request.getParameter("opcion");
 		String id_miem = request.getParameter("id_miembro");
-		
 		UsuarioDAO userdao = new UsuarioDAO();
+		
 		Usuario user = null;
 		String destPage = "datosmiembros.jsp";
 		
 		switch(opcion) {
 		
 		case "e" :
-			destPage = "editardepartamento.jsp";
-		try {
-			user = userdao.Update(id_miem);
+			destPage = "editarmiembros.jsp";
+			user = userdao.findById(id_miem);
 			request.setAttribute("user", user);
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
+		
 			
 		break;
 		
 		case "b" :
-		try {
+		
 			userdao.Delete(id_miem);
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-			
+		
 		break;
 	}
 		
