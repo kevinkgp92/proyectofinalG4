@@ -5,7 +5,7 @@ public class Usuario {
 	private String id_miembro;
 	private String nombre_miem;
 	private String contraseña;
-	private int telefono;
+	private String telefono;
 	private String email;
 	private String rol;
 	private String viajes_realizados;
@@ -16,7 +16,7 @@ public class Usuario {
 	}
 	
 	
-	public Usuario(String id_miembro, String nombre_miem, String contraseña, int telefono, String email, String rol, String viajes_realizados) {
+	public Usuario(String id_miembro, String nombre_miem, String contraseña, String telefono, String email, String rol, String viajes_realizados) {
 		
 		super();
 		this.id_miembro = id_miembro;
@@ -60,12 +60,12 @@ public class Usuario {
 	}
 
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
