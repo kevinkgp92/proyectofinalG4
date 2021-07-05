@@ -43,7 +43,7 @@ public class Controlador extends HttpServlet {
 
 			userdao.Delete(id_miem);
 
-			userdao.Delete(id_miem);
+			
 
 			break;
 		}
