@@ -50,7 +50,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		pst.setString(1, user.getId_miembro());
 		pst.setString(2, user.getNombre_miem());
 		pst.setString(3, user.getContraseña());
-		pst.setInt(4, user.getTelefono());
+		pst.setString(4, user.getTelefono());
 		pst.setString(5, user.getEmail());
 		pst.setString(6, user.getRol());
 		pst.setString(7, user.getViajes_realizados());
@@ -103,7 +103,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			pst= con.prepareStatement(sql);
 			pst.setString(1, user.getNombre_miem());
 			pst.setString(2, user.getContraseña());
-			pst.setInt(3, user.getTelefono());
+			pst.setString(3, user.getTelefono());
 			pst.setString(4, user.getEmail());
 			pst.setString(5, user.getRol());
 			pst.setString(6, user.getViajes_realizados());
@@ -142,7 +142,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 				user.setId_miembro(rs.getString("id_miembro"));
 				user.setNombre_miem(rs.getString("nombre_miembro"));
 				user.setContraseña(rs.getString("contraseña"));
-				user.setTelefono(rs.getInt("telefono"));
+				user.setTelefono(rs.getString("telefono"));
 				user.setEmail(rs.getString("email"));
 				user.setRol(rs.getString("rol"));
 				user.setViajes_realizados(rs.getString("viajes_realizados"));

@@ -3,6 +3,7 @@ package com.eoi.controlador;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,32 +34,50 @@ public class Controlador extends HttpServlet {
 		switch(opcion) {
 		
 		case "e" :
-			destPage = "editardepartamento.jsp";
-		try {
-			user = userdao.Update(id_miem);
+			destPage = "editarmiembros.jsp";
+			user = userdao.findById(id_miem);
 			request.setAttribute("user", user);
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
+	
 			
 		break;
 		
 		case "b" :
-		try {
 			userdao.Delete(id_miem);
 			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-			
+
 		break;
 	}
 		
 	}
 
-	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String opcion = request.getParameter("opcion");
+		String id_miembro = request.getParameter("id_miembro");
+		String nombre_miem = request.getParameter("nombre_miem");
+		String contraseña = request.getParameter("contraseña");
+		String telefono = request.getParameter("telefono");
+		String email = request.getParameter("email");
+		String rol = request.getParameter("rol");
+		String viajes_realizados = request.getParameter("viajes_realizados");
+		
+
+		Usuario user = new Usuario(id_miembro, nombre_miem, contraseña, telefono, email, rol, viajes_realizados);
+		UsuarioDAO userdao = new UsuarioDAO();
+
+		String destPage = "datosmiembros.jsp";
+
+		if (opcion.equals("e")) {
+			userdao.Update(user);
+		}
+		if (opcion.equals("a")) {
+			userdao.Create(user);
+		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+		dispatcher.forward(request, response);
+
+	}
+	}
 	
 
-}
+
