@@ -20,7 +20,7 @@
         <input type="email" name="email" id="email" placeholder="Email" />
 
         <label for="asunto">Teléfono: </label>
-        <input type="text" name="asunto" id="asunto" placeholder="titular de la consulta" />
+        <input type="text" name="asunto" id="asunto" placeholder="Teléfono" />
         
         <label for="mensaje">Tipo de Turismo Favorito: </label>
         <textarea name="mensaje"  placeholder="Describe brevemente en menos de 300 caracteres" maxlength="300"></textarea>

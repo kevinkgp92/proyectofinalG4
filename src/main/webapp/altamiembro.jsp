@@ -10,7 +10,7 @@
 	<h1>Alta de un Miembro</h1>
 	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%></h2>
 	
-	<form action="AltaDepto" method="post">
+	<form action="Controlador" method="post">
 		<label for="id_miembro">Id miembro: </label>
 		<input type="text" class="input" name="id_miembro">*<br>
 		<label for="nombre_miem">Nombre del Miembro:</label>
@@ -25,8 +25,8 @@
 		<input type="text" class="input" name="rol"><br>
 		<label for="viajes_realizados">Viajes Realizados: </label>
 		<input type="text" class="input" name="viajes_realizados"><br>
-		<input type="hidden" name="opcion" value="a">
 		
+		<input type="hidden" name="opcion" value="a">
 		<input type="submit" value="Alta">
 	</form>
 </body>
