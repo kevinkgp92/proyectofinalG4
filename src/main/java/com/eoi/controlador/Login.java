@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
 			if(user != null) {
 				pagDest ="datosmiembros.jsp";
 				HttpSession session = request.getSession();
-				session.setAttribute("usuario",user.getNombre_miem());
+				session.setAttribute("nombre_miem",user.getNombre_miem());
 				session.setAttribute("rol", user.getRol());
 			}else {
 				String msgerr =  "Usuario y/o contraseña incorrectos";

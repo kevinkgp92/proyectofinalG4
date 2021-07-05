@@ -21,7 +21,7 @@
 	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%> - <%=session.getAttribute("rol")%> </h2>
 	<nav>
 		<ul>
-			<li><a href="#">Home</a></li>
+			<li><a href="index.html">Home</a></li>
 			<% if(session.getAttribute("rol").equals("admin")){ %>
 			
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
