@@ -13,53 +13,45 @@ import javax.servlet.http.HttpServletResponse;
 import com.eoi.modelo.Usuario;
 import com.eoi.modelo.UsuarioDAO;
 
-
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
-	
-    public Controlador() {
-        super();
-        
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public Controlador() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String opcion = request.getParameter("opcion");
 		String id_miem = request.getParameter("id_miembro");
 		UsuarioDAO userdao = new UsuarioDAO();
-		
+
 		Usuario user = null;
 		String destPage = "datosmiembros.jsp";
-		
-		switch(opcion) {
-		
-		case "e" :
+
+		switch (opcion) {
+
+		case "e":
 			destPage = "editarmiembros.jsp";
 			user = userdao.findById(id_miem);
 			request.setAttribute("user", user);
-<<<<<<< HEAD
-		
-=======
-	
->>>>>>> 184d6cbe1b7f9c48b679ac22bd0e073db01f8be8
-			
-		break;
-		
-		case "b" :
-<<<<<<< HEAD
-		
-			userdao.Delete(id_miem);
-		
-=======
-			userdao.Delete(id_miem);
-			
 
->>>>>>> 184d6cbe1b7f9c48b679ac22bd0e073db01f8be8
-		break;
-	}
-		
+			break;
+
+		case "b":
+
+			userdao.Delete(id_miem);
+
+			userdao.Delete(id_miem);
+
+			break;
+		}
+
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		String opcion = request.getParameter("opcion");
 		String id_miembro = request.getParameter("id_miembro");
@@ -69,7 +61,6 @@ public class Controlador extends HttpServlet {
 		String email = request.getParameter("email");
 		String rol = request.getParameter("rol");
 		String viajes_realizados = request.getParameter("viajes_realizados");
-		
 
 		Usuario user = new Usuario(id_miembro, nombre_miem, contraseña, telefono, email, rol, viajes_realizados);
 		UsuarioDAO userdao = new UsuarioDAO();
@@ -86,7 +77,4 @@ public class Controlador extends HttpServlet {
 		dispatcher.forward(request, response);
 
 	}
-	}
-	
-
-
+}
