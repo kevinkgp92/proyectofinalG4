@@ -17,13 +17,13 @@
 		<input type="text" class="input" name="nombre_miem">*<br>
 		<label for="contraseña">Contraseña: </label>
 		<input type="text" class="input" name="contraseña">*<br>
-		<label for for="telefono">Teléfono: </label>
+		<label for="telefono">Teléfono: </label>
 		<input type="number" class="input" name="telefono"><br>
-		<label for for="email">Email: </label>
+		<label for="email">Email: </label>
 		<input type="text" class="input" name="email"><br>
-		<label for for="rol">Rol: </label>
+		<label for="rol">Rol: </label>
 		<input type="text" class="input" name="rol"><br>
-		<label for for="viajes_realizados">Viajes Realizados: </label>
+		<label for="viajes_realizados">Viajes Realizados: </label>
 		<input type="text" class="input" name="viajes_realizados"><br>
 		<input type="hidden" name="opcion" value="a">
 		
