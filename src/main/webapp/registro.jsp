@@ -4,13 +4,22 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="css/registro.css">
+<link rel="stylesheet" href="css/estilo.css">
 <title>Formulario de Registro</title>
 </head>
 <body>
+	<h1>
+		<img src="img/mountains-6341663_1280.jpg" alt="">
+	</h1>
+		<div class="topnav">
+		<a class="active" href="http://localhost:8080/proyectoFinal/index.html">INICIO</a> <a href="#ofertasp">OFERTAS
+			PREMIUM</a> <a href="http://localhost:8080/proyectoFinal/contacto.html">CONTACTO</a> <a href="#sobrenosotros">SOBRE
+			NOSOTROS</a> <a href="http://localhost:8080/proyectoFinal/registro.jsp">REGÍSTRATE</a> <a href="http://localhost:8080/proyectoFinal/login.jsp">INICIAR SESIÓN</a>
+			<a href="http://localhost:8080/proyectoFinal/infocovid.html">INFORMACIÓN COVID</a>
+	</div>
 	 <form action="index.html" name="formRegistro" id="Formulario" autocomplete="off" class= "formregistro">
         <label for="nombre_miem">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" />
+        <input id="firstName" type="text" name="nombre" placeholder="Escribe tu nombre..." />
         <span class="errorNombre" id="errorNombre"></span>
 
         <label for="contraseña">Contraseña:</label>
