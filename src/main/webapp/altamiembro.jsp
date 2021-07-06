@@ -7,6 +7,9 @@
 <title>Alta miembros</title>
 </head>
 <body>
+	<h1>
+		<img src="img/mountains-6341663_1280.jpg" alt="">
+		</h1>
 	<h1>Alta de un Miembro</h1>
 	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%></h2>
 	
