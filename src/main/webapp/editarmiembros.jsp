@@ -1,6 +1,8 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
      <%@ page import = "com.eoi.modelo.Usuario" %>
+     <%@ page import = "com.eoi.modelo.UsuarioDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +11,21 @@
 </head>
 <body>
 	<h1>Modificación de un Miembro</h1>
-	<h2>Bienvenido <%=session.getAttribute("nombre_miembro")%></h2>
+	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%></h2>
 	
 	<%
-		Usuario user = (Usuario) request.getAttribute("user");
+		HttpSession sesion = request.getSession();
+		String id_miem;  
+		id_miem = (String)sesion.getAttribute("id_miem");
+		int id_miemNum = Integer.parseInt(id_miem);
+		System.out.println(id_miem);
+		UsuarioDAO userdao = new UsuarioDAO();
+		Usuario user = null;
+		user = userdao.findById(id_miemNum);
 	%>
 	
 	
-	<form action="EditarMiembro" method="post">
+	<form action="ServletEditarMiembro" method="post">
 		<label for="id_miembro">ID del Miembro: </label>
 		<input type="text" class="input" name="id_miembro" readonly value="<%= user.getId_miembro()%>">*<br>
 		<label for="nombre_miem">Nombre del Miembro:</label>

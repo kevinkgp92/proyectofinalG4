@@ -21,7 +21,7 @@
 		<label for="contraseña">Contraseña: </label>
 		<input type="text" class="input" name="contraseña">*<br>
 		<label for="telefono">Teléfono: </label>
-		<input type="number" class="input" name="telefono"><br>
+		<input type="text" class="input" name="telefono"><br>
 		<label for="email">Email: </label>
 		<input type="text" class="input" name="email"><br>
 		<label for="rol">Rol: </label>

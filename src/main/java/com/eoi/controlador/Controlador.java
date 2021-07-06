@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.eoi.modelo.Usuario;
 import com.eoi.modelo.UsuarioDAO;
@@ -26,7 +27,7 @@ public class Controlador extends HttpServlet {
 		String opcion = request.getParameter("opcion");
 		String id_miem = request.getParameter("id_miembro");
 		UsuarioDAO userdao = new UsuarioDAO();
-
+		HttpSession session = request.getSession();
 		Usuario user = null;
 		String destPage = "datosmiembros.jsp";
 
@@ -34,8 +35,8 @@ public class Controlador extends HttpServlet {
 
 		case "e":
 			destPage = "editarmiembros.jsp";
-			user = userdao.findById(id_miem);
-			request.setAttribute("user", user);
+			//user = userdao.findById(id_miem);
+			session.setAttribute("id_miem", id_miem);
 
 			break;
 
@@ -47,6 +48,9 @@ public class Controlador extends HttpServlet {
 
 			break;
 		}
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+		dispatcher.forward(request, response);
 
 	}
 
@@ -61,8 +65,9 @@ public class Controlador extends HttpServlet {
 		String email = request.getParameter("email");
 		String rol = request.getParameter("rol");
 		String viajes_realizados = request.getParameter("viajes_realizados");
+		int id_miembroNum = Integer.parseInt(id_miembro);
 
-		Usuario user = new Usuario(id_miembro, nombre_miem, contraseña, telefono, email, rol, viajes_realizados);
+		Usuario user = new Usuario(id_miembroNum, nombre_miem, contraseña, telefono, email, rol, viajes_realizados);
 		UsuarioDAO userdao = new UsuarioDAO();
 
 		String destPage = "datosmiembros.jsp";
