@@ -47,7 +47,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 		con = Conexion.getInstance().getConnection();
 		pst = con.prepareStatement(sql);
-		pst.setString(1, user.getId_miembro());
+		pst.setInt(1, user.getId_miembro());
 		pst.setString(2, user.getNombre_miem());
 		pst.setString(3, user.getContraseña());
 		pst.setString(4, user.getTelefono());
@@ -107,7 +107,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			pst.setString(4, user.getEmail());
 			pst.setString(5, user.getRol());
 			pst.setString(6, user.getViajes_realizados());
-			pst.setString(7, user.getId_miembro());
+			pst.setInt(7, user.getId_miembro());
 			System.out.println("Ejecutando la query: " + sql);
 			rows = pst.executeUpdate();
 			System.out.println("Registros afectados: " + rows);
@@ -127,7 +127,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		
 	}
 	
-	public Usuario findById(String id_miembro) {
+	public Usuario findById(int id_miembro) {
 		//El interrogante significa que es el argumento que vamos a tener que recibir aun no lo conocemos
 		
 		Usuario user = new Usuario();
@@ -136,13 +136,13 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		try {
 			con=Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setString(1, id_miembro);
+			pst.setInt(1, id_miembro);
 			rs=pst.executeQuery();
 			
 			while(rs.next()) {
 				
-				user.setId_miembro(rs.getString("id_miembro"));
-				user.setNombre_miem(rs.getString("nombre_miembro"));
+				user.setId_miembro(rs.getInt("id_miembro"));
+				user.setNombre_miem(rs.getString("nombre_miem"));
 				user.setContraseña(rs.getString("contraseña"));
 				user.setTelefono(rs.getString("telefono"));
 				user.setEmail(rs.getString("email"));

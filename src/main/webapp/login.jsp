@@ -7,7 +7,7 @@
 <title>Acceso Área Personal</title>
 </head>
 <body>
-	<form action= "Login" method = "post">
+ 	<form action= "Login" method = "post">
 		<label for = "email"> Email: </label>
 		<input type = "email" name= "email" required>*<br>
 		<label for="pass">Contraseña:</label><br>
