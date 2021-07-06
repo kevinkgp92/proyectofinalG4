@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 		
 		UsuarioDAO udao = new UsuarioDAO();
 		Usuario user = null;
-		String pagDest = "altamiembro.jsp";
+		String pagDest = "datosmiembros.jsp";
 		
 		try {
 			user = udao.login(email, contraseña);
