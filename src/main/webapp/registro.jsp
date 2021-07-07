@@ -19,21 +19,21 @@
 	</div>
 	<div>
 		<p style="padding-left: 100px;">
-		<form action="index.html" name="formRegistro" id="Formulario"
+		<form action="ServletRegistro" method="post" name="formRegistro" id="Formulario"
 			autocomplete="off" class="formregistro">
 			<label for="nombre_miem">Nombre:</label> <input id="firstName"
-				type="text" name="nombre" placeholder="Escribe tu nombre..." /> <span
+				type="text" name="nombre_miem" placeholder="Escribe tu nombre" /> <span
 				class="errorNombre" id="errorNombre"></span> <label for="contraseña">Contraseña:</label>
-			<input type="text" name="apellidos" id="apellidos"
+				<input type="password" name="contraseña" id="password"
 				placeholder="Contraseña" /> <label for="email">Email</label> <input
 				type="email" name="email" id="email" placeholder="Email" /> <label
-				for="asunto">Teléfono: </label> <input type="text" name="asunto"
+				for="asunto">Teléfono: </label> <input type="text" name="telefono"
 				id="asunto" placeholder="Teléfono" /> <label for="mensaje">Tipo
 				de Turismo Favorito: </label>
-			<textarea name="mensaje"
+				<textarea name="mensaje"
 				placeholder="Describe brevemente en menos de 300 caracteres"
 				maxlength="300"></textarea>
-
+			<input type="hidden" name="opcion" value="a">
 			<input type="submit" name="Enviar" value="Registrarme" />
 		</form>
 	</div>

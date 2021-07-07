@@ -16,7 +16,7 @@
 	<%
 		HttpSession sesion = request.getSession();
 		String id_miem;  
-		id_miem = (String)sesion.getAttribute("id_miem");
+		id_miem = (String)session.getAttribute("id_miem");
 		int id_miemNum = Integer.parseInt(id_miem);
 		System.out.println(id_miem);
 		UsuarioDAO userdao = new UsuarioDAO();

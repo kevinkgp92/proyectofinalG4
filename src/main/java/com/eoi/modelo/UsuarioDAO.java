@@ -164,14 +164,14 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		
 	}
 	
-	public Usuario ConsultaViaje(String id_miembro) {
+	public Usuario ConsultaViaje(int id_miembro) {
 		
 		Usuario user = new Usuario();
 		String sql = "SELECT nombre_miembro AND viajes_realizados FROM t_miembros WHERE id_miembro = ?";
 		try {
 			con=Conexion.getInstance().getConnection();
 			pst= con.prepareStatement(sql);
-			pst.setString(1, id_miembro);
+			pst.setInt(1, id_miembro);
 			rs=pst.executeQuery();
 			
 			while(rs.next()) {
@@ -189,7 +189,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 		return user;
 	}
 	
-	public boolean CambioRol(String id_miembro, String rol) {
+	public boolean CambioRol(int id_miembro, String rol) {
 		
 		
 		String sql = "UPDATE t_miembros SET rol = ? WHERE id_miembro = ?";
@@ -198,7 +198,7 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			con=Conexion.getInstance().getConnection();
 			pst = con.prepareStatement(sql);
 			pst.setString(1, rol);
-			pst.setString(2, id_miembro);
+			pst.setInt(2, id_miembro);
 			System.out.println("Ejecutando el Update: " + sql);
 			pst.executeUpdate();
 			
