@@ -28,6 +28,16 @@ public class Usuario {
 		this.viajes_realizados= viajes_realizados;
 		
 	}
+	
+
+	public Usuario(String nombre_miem, String contraseña, String telefono, String email) {
+		super();
+		this.nombre_miem = nombre_miem;
+		this.contraseña = contraseña;
+		this.telefono = telefono;
+		this.email = email;
+		
+	}
 
 
 	public int getId_miembro() {

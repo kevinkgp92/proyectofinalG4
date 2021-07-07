@@ -28,10 +28,10 @@ CREATE TABLE `t_miembros` (
   `contraseña` varchar(80) NOT NULL,
   `telefono` varchar(20) NOT NULL,
   `email` varchar(45) NOT NULL,
-  `rol` varchar(45) NOT NULL,
+  `rol` varchar(45) DEFAULT NULL,
   `viajes_realizados` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id_miembro`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `t_miembros` (
 
 LOCK TABLES `t_miembros` WRITE;
 /*!40000 ALTER TABLE `t_miembros` DISABLE KEYS */;
-INSERT INTO `t_miembros` VALUES (1,'Kevin','1234','123','kevinkgp@gmail.com','admin','null'),(2,'Adrian','1234','121345678','adriannavarro@gmail.com','admin',NULL),(3,'Angela','1234','123456789','Angela@gmail.com','admin',NULL),(4,'Agapito','afdsafas','4532133452','agapito_89@gmail.com','miembro','Ninguno');
+INSERT INTO `t_miembros` VALUES (1,'Kevin','1234','123','kevinkgp@gmail.com','admin','null'),(2,'Adrian','1234','121345678','adriannavarro@gmail.com','admin',NULL),(3,'Angela','1234','123456789','Angela@gmail.com','admin',NULL),(4,'Agapito','afdsafas','4532133452','agapito_89@gmail.com','miembro','Ninguno'),(5,'Julia Ponce Linares','1234','685437324','juliapl@gmail.com','miembro','null');
 /*!40000 ALTER TABLE `t_miembros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,4 +160,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-06 17:16:23
+-- Dump completed on 2021-07-07 12:23:51
