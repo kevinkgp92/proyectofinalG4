@@ -22,17 +22,24 @@
 		<form action="ServletRegistro" method="post" name="formRegistro" id="Formulario"
 			autocomplete="off" class="formregistro">
 			<label for="nombre_miem">Nombre:</label> <input id="firstName"
-				type="text" name="nombre_miem" placeholder="Escribe tu nombre" /> <span
+				type="text" name="nombre_miem" placeholder="Escriba aquí su nombre completo..." /> <span
 				class="errorNombre" id="errorNombre"></span> <label for="contraseña">Contraseña:</label>
 				<input type="password" name="contraseña" id="password"
-				placeholder="Contraseña" /> <label for="email">Email</label> <input
-				type="email" name="email" id="email" placeholder="Email" /> <label
+				placeholder="Escriba aquí una contraseña..." /> <label for="email">Email</label> <input
+				type="email" name="email" id="email" placeholder="Escriba aquí su email..." /> <label
 				for="asunto">Teléfono: </label> <input type="text" name="telefono"
-				id="asunto" placeholder="Teléfono" /> <label for="mensaje">Tipo
+				id="asunto" placeholder="Escriba aquí su número de teléfono..." /> <label for="mensaje">Tipo
 				de Turismo Favorito: </label>
-				<textarea name="mensaje"
-				placeholder="Describe brevemente en menos de 300 caracteres"
-				maxlength="300"></textarea>
+				<select name="tipoTurismo" id="tipoturismo">
+				<option value="Cualquier Tipo">Cualquier Tipo / N/A</option>
+					<option value="Natural">Turismo Natural</option>
+					<option value="Sol y playa">Turismo de Sol y Playa</option>
+					<option value="Bienestar">Turismo de Bienestar</option>
+					<option value="Gastronomico">Turismo de Gastronómico</option>
+					<option value="Ocio">Turismo de Ocio</option>
+					<option value="Aventura">Turismo de Aventura</option>
+					<option value="Cultural">Turismo Cultural</option>
+				</select>
 			<input type="hidden" name="opcion" value="a">
 			<input type="submit" name="Enviar" value="Registrarme" />
 		</form>

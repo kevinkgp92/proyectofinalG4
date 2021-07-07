@@ -19,6 +19,7 @@
 	</div>
 
 	<div class="column.middle">
+	<p style="padding-left: 100px;">
 		<form action="Login" method="post">
 			<label for="email">Email: </label> <input type="email" name="email"
 				required>*<br> <br> <label for="pass">Contrase&#241;a:</label>
