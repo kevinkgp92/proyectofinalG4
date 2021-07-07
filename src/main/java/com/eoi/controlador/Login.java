@@ -45,7 +45,7 @@ public class Login extends HttpServlet {
 			}else {
 				String msgerr =  "Usuario y/o contraseña incorrectos";
 				request.setAttribute("msgerr", msgerr);
-				pagDest = "index.html";
+				pagDest = "errorlogin.jsp";
 			}
 			
 		} catch (SQLException e) {
