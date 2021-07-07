@@ -69,11 +69,11 @@ button {
   color: black;
 }
 
-/* .content { */
-/*   background-color: #ddd; */
-/*   height: 500px; */
-/*   padding: 10px; */
-/*}
+.content {
+	background-color: #ddd;
+	height: 500px;
+	padding: 10px;
+}
 
 .buscador {
     float: right;
