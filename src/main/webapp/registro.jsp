@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h1>
-		<img src="img/mountains-6341663_1280.jpg" alt="">
+		<img width="100%" src="img/banner.png">
 	</h1>
 	<div class="topnav">
 		<a class="active" href="http://localhost:8080/proyectoFinal/index.html">INICIO</a> <a href="#ofertasp">OFERTAS
