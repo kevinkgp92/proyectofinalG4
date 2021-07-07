@@ -12,7 +12,8 @@
 <body>
 <%
 		Connection con = Conexion.getInstance().getConnection();
-		String sql = "SELECT * FROM t_viajes_detalle";
+		String sql = "SELECT * FROM proyectofinal.t_viajes";
+				//*WHERE provincia = ?";
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(sql);
 	

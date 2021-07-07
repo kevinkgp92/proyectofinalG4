@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,7 @@ public class ServletBuscador extends HttpServlet {
 		String provincia = request.getParameter("provincia");
 		String tipoTurismo = request.getParameter("tipoTurismo");
 		String comuniautonoma = "";
+		
 		List<String> listaViajes = new ArrayList<String>();
 		
 		switch(comautonoma) {
@@ -71,5 +73,4 @@ public class ServletBuscador extends HttpServlet {
 			System.out.println(viaje);
 		}
 	}
-
 }
