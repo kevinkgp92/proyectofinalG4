@@ -19,7 +19,7 @@
 	</div>
 	<div>
 		<p style="padding-left: 100px;">
-		<form action="index.html" name="formRegistro" id="Formulario"
+		<form action="Controlador" name="formRegistro" id="Formulario"
 			autocomplete="off" class="formregistro">
 			<label for="nombre_miem">Nombre:</label> <input id="firstName"
 				type="text" name="nombre" placeholder="Escribe tu nombre..." /> <span

@@ -25,7 +25,7 @@
 			<% if(session.getAttribute("rol").equals("admin")){ %>
 			
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
-				<li><a href="editarmiembros.jsp">Modificar datos</a></li>
+				
 			<% } %>	
 		</ul>
 	
