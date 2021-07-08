@@ -48,6 +48,16 @@
 				type="submit" name="Enviar" value="Registrarme" />
 		</form>
 	</div>
-
+		<div class="footer">
+		<a href="#">Aviso Legal | </a>
+		<a href="#">Privacidad |</a>
+		<b>Redes sociales:</b>
+		   Facebook <a href="https://www.facebook.com/ViajesNationalGeographic/" target="_blank">
+         <img alt="facebook.png" src="img/facebook.png"></a>
+		Instagram <a href="https://www.instagram.com/viajesAKA/" target="_blank">
+		<img alt="instagram.png" src="img/instagram.png"></a>
+		Twitter <a href="https://twitter.com/viajesAKA" target="_blank">
+		<img alt="twitter.png" src="img/twitter.png"></a>
+	</div>
 </body>
 </html>
