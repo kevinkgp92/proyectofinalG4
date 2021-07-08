@@ -81,6 +81,11 @@ button {
 	padding: 10px;
 }
 
+.titulocovid {
+  background-color: #ddd;
+  text-align: center;
+}
+
 .buscador {
     float: right;
     background-color: rgb(255, 255, 255);
