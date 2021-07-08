@@ -7,14 +7,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.eoi.modelo.Viajes;
+
 public class BuscadorDAO {
 	Connection con; 
 	PreparedStatement pst; 
 	ResultSet rs; 
 	
-	public List<String> busqueda(String provincia, String comunidad, String tipoTurismo) {
+	public List<Viajes> busqueda(String provincia, String comunidad, String tipoTurismo) {
 		
-		List<String> listaViajes = new ArrayList<String>();
+		List<Viajes> listaViajes = new ArrayList<Viajes>();
+		Viajes viaje;
 		
 		String provinciamin;
 		String provinciamax;
@@ -66,7 +69,8 @@ public class BuscadorDAO {
 			
 			rs = pst.executeQuery();
 			while(rs.next()) {
-				listaViajes.add(rs.getString("nombre_viaje"));
+				viaje = new Viajes(rs.getString("viaje_foto"),rs.getString("viaje_boton"),rs.getString("viaje_descripcion"),rs.getString("viaje_titulo")); 
+				listaViajes.add(viaje);
 			}
 			
 			rs.close();

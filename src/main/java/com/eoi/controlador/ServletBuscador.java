@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.eoi.modelo.Viajes;
 import com.eoi.servicios.BuscadorDAO;
 
 @WebServlet("/ServletBuscador")
@@ -22,8 +23,9 @@ public class ServletBuscador extends HttpServlet {
 		String provincia = request.getParameter("provincia");
 		String tipoTurismo = request.getParameter("tipoTurismo");
 		String comuniautonoma = "";
+		String destPage = "PaquetesDeViajes.jsp";
 		
-		List<String> listaViajes = new ArrayList<String>();
+		List<Viajes> listaViajes = new ArrayList<Viajes>();
 		
 		switch(comautonoma) {
 		case "1": comuniautonoma = "Cualquier Comunidad Autónoma";
@@ -68,9 +70,8 @@ public class ServletBuscador extends HttpServlet {
 		break;
 		}
 		listaViajes = search.busqueda(provincia, comuniautonoma, tipoTurismo);
-		
-		for(String viaje: listaViajes) {
-			System.out.println(viaje);
-		}
+		request.setAttribute("listaViajes", listaViajes);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+		dispatcher.forward(request, response);
 	}
 }

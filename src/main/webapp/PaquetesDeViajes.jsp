@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.eoi.servicios.Conexion"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.eoi.modelo.Viajes"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,15 +12,14 @@
 <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<%
-		Connection con = Conexion.getInstance().getConnection();
-		String sql = "SELECT * FROM proyectofinal.t_viajes";
-				//*WHERE provincia = ?";
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery(sql);
+
 	
-	%>
-	
+ 	<%
+ 	List<Viajes> listaViajes = new ArrayList<Viajes>();
+ 	listaViajes = (List<Viajes>)request.getAttribute("listaViajes");
+ 	%>
+ 	
+ 	
 	<table summary="Listado De Paquetes De Viajes Disponibles">
 		<caption>Listado De Paquetes De Viajes Disponibles</caption>
 		<thead>
@@ -31,14 +32,14 @@
 		</thead>
 		<tbody>
 			<%
-			while(rs.next()){			
+			for(Viajes viaje: listaViajes) {			
 			%>
 			<tr>
 <!-- 				<th scope="row">Buzzcocks</th> -->
-				<td><%= rs.getString("viaje_foto")%></td>
-				<td><%= rs.getString("viaje_titulo")%></td>
-				<td><%= rs.getString("viaje_descripcion")%></td>
-				<td><%= rs.getString("viaje_boton")%></td>
+				<td><%= viaje.getViaje_fotos() %></td>
+				<td><%= viaje.getViaje_titulo()%></td>
+				<td><%= viaje.getViaje_descrip()%></td>
+				<td><%= viaje.getViaje_boton() %></td>
 			</tr>
 		</tbody>
 		<%} %>
