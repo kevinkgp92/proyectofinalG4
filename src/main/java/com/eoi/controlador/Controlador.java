@@ -37,6 +37,7 @@ public class Controlador extends HttpServlet {
 			destPage = "editarmiembros.jsp";
 			//user = userdao.findById(id_miem);
 			session.setAttribute("id_miem", id_miem);
+			session.setAttribute("usu", user);
 
 			break;
 

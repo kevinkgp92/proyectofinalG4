@@ -28,13 +28,14 @@ public class Login extends HttpServlet {
 		String email = request.getParameter("email");
 		String contraseña = request.getParameter("contraseña");
 		
+		
 		UsuarioDAO udao = new UsuarioDAO();
 		Usuario user = null;
 		String pagDest = "datosmiembros.jsp";
 		
 		try {
 			user = udao.login(email, contraseña);
-			
+			request.setAttribute("usu", user);
 			
 			//Usuario existe en la base de datos
 			if(user != null) {

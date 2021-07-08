@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import = "com.eoi.servicios.Conexion" %>    
+<%@ page import = "com.eoi.servicios.Conexion" %> 
+<%@ page import = "com.eoi.modelo.Usuario" %>    
 <%@ page import ="java.sql.*" %>
 
 <!DOCTYPE html>
@@ -12,10 +13,14 @@
 </head>
 <body>
 	<%
+		HttpSession sesion = request.getSession();
+		
 		Connection con = Conexion.getInstance().getConnection();
 		String sql = "SELECT * FROM t_miembros";
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery(sql);
+		Usuario usu = (Usuario) request.getAttribute("usu");
+		
 	
 	%>
 	
@@ -28,10 +33,11 @@
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
 				
 			<% } %>	
+			<li><a href = "Logout">Logout</a>
 		</ul>
 	
 	</nav>
-	
+	<% if(session.getAttribute("rol").equals("admin")){ %>
 	<table>
 		<caption><b>Listado de miembros</b></caption>
 		<tr>
@@ -67,5 +73,40 @@
 			
 		<%} %>
 	</table>
+	<%} %>
+	<% if(session.getAttribute("rol").equals("miembro")){ %>
+	
+	<form action="ServletEditarMiembro?opcion=e&id_miem=<%= usu.getId_miembro() %>" method="post">
+		
+		<label for="nombre_miem">Nombre del Miembro:</label>
+		<input type="text" class="input" name="nombre_miem" value="<%= usu.getNombre_miem()%>">*<br>
+		<label for="contraseña">Contraseña: </label>
+		<input type="text" class="input" name="contraseña" value="<%= usu.getContraseña()%>">*<br>
+		<label for="telefono">Teléfono: </label>
+		<input type="text" class="input" name="telefono" value="<%= usu.getTelefono()%>"><br>
+		<label for="email">Email: </label>
+		<input type="text" class="input" name="email" value="<%= usu.getEmail()%>"><br>
+		<label for="rol">Rol: </label>
+		<input type="text" class="input" name="rol" value="<%= usu.getRol()%>"><br>
+		<label for="viajes_realizados">Viajes Realizados: </label>
+		<input type="text" class="input" name="viajes_realizados" value="<%= usu.getViajes_realizados()%>"><br>
+		
+		<input type="hidden" name="opcion" value="e">
+		<input type="submit" value="Modificar">
+		
+		<% if(request.getAttribute("msg") !=null){
+			
+			out.print(request.getAttribute("msg"));
+		}
+		
+		%>
+	</form>
+	<input type="submit" value="Ver historial viajes">
+	<% } %>
+	<%
+	con.close();
+	st.close();
+	rs.close();
+	%>
 </body>
 </html>

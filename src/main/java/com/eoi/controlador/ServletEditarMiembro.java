@@ -19,7 +19,7 @@ public class ServletEditarMiembro extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String opcion = request.getParameter("opcion");
-		String id_miembro = request.getParameter("id_miembro");
+		String id_miembro = request.getParameter("id_miem");
 		String nombre_miem = request.getParameter("nombre_miem");
 		String contraseña = request.getParameter("contraseña");
 		String telefono = request.getParameter("telefono");
@@ -30,15 +30,19 @@ public class ServletEditarMiembro extends HttpServlet {
 		int id_miembroNum = Integer.parseInt(id_miembro);
 		
 		Usuario user = new Usuario(id_miembroNum, nombre_miem, contraseña, telefono, email, rol, v_realizados);
+		
 		UsuarioDAO userdao = new UsuarioDAO();
+		request.setAttribute("usu", user);
 		
 		if(opcion.equals("e")) {
 			userdao.Update(user);
+			request.setAttribute("msg", "Tus datos han sido modificados correctamente");
 		}
 		
 		if(opcion.equals("a")) {
 			
 			userdao.Create(user);
+			request.setAttribute("msg", "Tus datos han sido modificados correctamente");
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);

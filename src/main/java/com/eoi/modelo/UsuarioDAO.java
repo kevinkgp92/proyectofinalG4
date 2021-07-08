@@ -30,8 +30,11 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			user = new Usuario();
 			user.setEmail(email);
 			user.setContraseña(contraseña);
+			user.setId_miembro(rs.getInt("id_miembro"));
 			user.setNombre_miem(rs.getString("nombre_miem"));
+			user.setTelefono(rs.getString("telefono"));
 			user.setRol(rs.getString("rol"));
+			user.setViajes_realizados(rs.getString("viajes_realizados"));
 			
 		}
 		
@@ -112,8 +115,9 @@ public Usuario login(String email, String contraseña) throws SQLException {
 			rows = pst.executeUpdate();
 			System.out.println("Registros afectados: " + rows);
 			
-			con.close();
+			
 			pst.close();
+			con.close();
 			
 			
 			

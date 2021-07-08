@@ -22,12 +22,13 @@
 		UsuarioDAO userdao = new UsuarioDAO();
 		Usuario user = null;
 		user = userdao.findById(id_miemNum);
+		
 	%>
 	
 	
 	<form action="ServletEditarMiembro" method="post">
 		<label for="id_miembro">ID del Miembro: </label>
-		<input type="text" class="input" name="id_miembro" readonly value="<%= user.getId_miembro()%>">*<br>
+		<input type="text" class="input" name="id_miem" readonly value="<%= user.getId_miembro()%>">*<br>
 		<label for="nombre_miem">Nombre del Miembro:</label>
 		<input type="text" class="input" name="nombre_miem" value="<%= user.getNombre_miem()%>">*<br>
 		<label for="contraseña">Contraseña: </label>
@@ -47,5 +48,7 @@
 		
 	
 	</form>
+	
+	
 </body>
 </html>
