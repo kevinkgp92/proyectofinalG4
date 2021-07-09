@@ -101,7 +101,7 @@
 		
 		%>
 	</form>
-	<input type="submit" value="Ver historial viajes">
+	
 	<% } %>
 	<%
 	con.close();

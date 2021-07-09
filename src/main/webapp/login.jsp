@@ -5,11 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Acceso &#193;rea Personal</title>
-<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 	<h1>
-		<img width="100%" src="img/banner.png">
+		<img width="100%" src="img/bannerlogin.png">
 	</h1>
 	<div class="topnav">
 		<a class="active" href="http://localhost:8080/proyectoFinal/index.html">INICIO</a> <a href="http://localhost:8080/proyectoFinal/sobrenosotros.html">SOBRE
@@ -17,16 +17,28 @@
 			<a href="http://localhost:8080/proyectoFinal/infocovid.html">INFORMACIÓN COVID</a>
 	</div>
 
-	<div class="column.middle">
-	<p style="padding-left: 100px;">
-		<form action="Login" method="post">
-			<label for="email">Email: </label> <input type="email" name="email"
-				required>*<br> <br> <label for="pass">Contrase&#241;a:</label>
-			<input type="password" name="contraseña" required>*<br>
-			<br> <input type="submit" value="Login"> <span
-				style="color: red"><%=(request.getAttribute("msgerr") == null) ? "" : request.getAttribute("msgerr")%></span>
-		</form>
-	</div>
+	<div class="wrapper fadeInDown">
+ 	 <div id="formContent">
+   		 <!-- Tabs Titles -->
+   		<center><h2 class="active"> Iniciar Sesión </h2></center>
+    	
+
+
+    <!-- Login Form -->
+    <form action="Login" method="post">
+      <label for="email">Email:</label><input type="text" id="login" class="fadeIn second" name="email">
+      <label for="contraseña">Pass:</label><input type="password" id="password" class="fadeIn third" name="contraseña">
+      <input type="submit" class="fadeIn fourth" value="Entrar">
+      <a href= "http://localhost:8080/proyectoFinal/registro.jsp" class="fadeIn fourth" >¿Aún no estás registrado/a?</a>
+    </form>
+    
+   
+    
+
+    
+
+  </div>
+</div>
 		<div class="footer">
 		<a href="#">Aviso Legal | </a>
 		<a href="#">Privacidad |</a>

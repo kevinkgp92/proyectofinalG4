@@ -21,7 +21,9 @@
  	
  	
 	<table summary="Listado De Paquetes De Viajes Disponibles">
-		<caption>Listado De Paquetes De Viajes Disponibles</caption>
+		<caption><b><u>Listado De Paquetes De Viajes Disponibles</u></b></caption>
+		
+		
 		<thead>
 			<tr>
 				<th scope="col"></th>
