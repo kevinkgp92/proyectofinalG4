@@ -1,57 +1,55 @@
-
 html {
-  min-height: 100%;
-  position: relative;
+	min-height: 100%;
+	position: relative;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 40px;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 40px;
 }
-
-
 
 /*elementos del Sobre Nosotros */
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #333;
-  padding: 1px;
-}
-.grid-item {
-  background-color: #ffffff;
-  border: 1px solid rgb(51, 51, 51);
-  padding: 10px;
-  font-size: 22px;
-  text-align: center;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	background-color: #333;
+	padding: 1px;
 }
 
-/*elementos de los formularios*/ 
+.grid-item {
+	background-color: #ffffff;
+	border: 1px solid rgb(51, 51, 51);
+	padding: 10px;
+	font-size: 22px;
+	text-align: center;
+}
+
+/*elementos de los formularios*/
 form {
 	overflow: auto;
-    padding-left: 20px;
+	padding-left: 20px;
 }
- 
+
 label {
-    float: left;
-    width: 200px;
-    padding-right: 24px;
+	float: left;
+	width: 200px;
+	padding-right: 24px;
 }
- 
+
 input {
-    float: left;
-    width: calc(100% - 200px);
+	float: left;
+	width: calc(100% - 200px);
 }
- 
+
 button {
-    float: right;
-    width: calc(100% - 200px);
+	float: right;
+	width: calc(100% - 200px);
 }
 
 #inputindex {
@@ -61,26 +59,24 @@ button {
 
 /* Style the top navigation bar */
 .topnav {
-  overflow: hidden;
-  background-color: #333;
-  
+	overflow: hidden;
+	background-color: #333;
 }
 
 /* Style the topnav links */
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 /* Change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+	background-color: #ddd;
+	color: black;
 }
 
 .content {
@@ -90,83 +86,74 @@ button {
 }
 
 .titulocovid {
-  background-color: #ddd;
-  text-align: center;
+	background-color: #ddd;
+	text-align: center;
 }
 
 .buscador {
-    float: right;
-    background-color: rgb(255, 255, 255);
-    width: 300px;
-    border: 10px solid rgb(75, 80, 82);
-    border-radius: 5px;
-    padding: 15px;
-    margin: 100px;
-   
-    
-  }
-  
-  .centrado { 
-  	text-align:center;
-  }
+	float: right;
+	background-color: rgb(255, 255, 255);
+	width: 300px;
+	border: 10px solid rgb(75, 80, 82);
+	border-radius: 5px;
+	padding: 15px;
+	margin: 100px;
+}
+
+.centrado {
+	text-align: center;
+}
 /* Left and right column */
 .column.side {
-    width: 25%;
-  }
-  
-  /* Middle column */
+	width: 25%;
+}
+
+/* Middle column */
 .column.middle {
 	padding: 50px;
 	text-align: center;
-    width: 50%;
-  }
+	width: 50%;
+}
 
-  
-  
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column.side, .column.middle {
-      width: 100%;
-    }
-  }
-   
-   
-   
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+	.column.side, .column.middle {
+		width: 100%;
+	}
+}
+
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-	background-color:#79bbff;
-	border-radius:6px;
-	border:1px solid #84bbf3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Times New Roman;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+	box-shadow: inset 0px 1px 0px 0px #bbdaf7;
+	background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color: #79bbff;
+	border-radius: 6px;
+	border: 1px solid #84bbf3;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Times New Roman;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #528ecc;
 }
+
 .myButton:hover {
-	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
-	background-color:#378de5;
+	background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color: #378de5;
 }
+
 .myButton:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
 }
 
 .footer {
-  background-color: #f1f1f1;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  height: 14px;
-  }
-  
-  
-  
-  
-  
+	background-color: #f1f1f1;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	height: 14px;
+}
