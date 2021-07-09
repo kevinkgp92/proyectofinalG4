@@ -27,6 +27,7 @@ public class ServletRegistro extends HttpServlet {
 		
 		
 		Usuario user = new Usuario(nombre_miem, contraseña, telefono, email);
+		user.setRol("miembro");
 		UsuarioDAO userdao = new UsuarioDAO();
 		
 		if(opcion.equals("a")) {
