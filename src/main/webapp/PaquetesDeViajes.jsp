@@ -13,6 +13,19 @@
 </head>
 <body>
 
+	<div class="header">
+		<div class="topnav">
+			<a class="active" href="http://localhost:8080/proyectoFinal/index.html">INICIO</a>  
+			<a href="http://localhost:8080/proyectoFinal/sobrenosotros.html">SOBRE NOSOTROS</a> 
+			<a href="http://localhost:8080/proyectoFinal/registro.jsp">REGÍSTRATE</a>
+			<a href="http://localhost:8080/proyectoFinal/login.jsp">INICIAR SESIÓN</a> 
+			<a href="http://localhost:8080/proyectoFinal/infocovid.html">INFORMACIÓN COVID</a>
+		</div>
+		<div class= "imagen">
+			<h1>
+				<img width="100%" src="img/bannerlogin.png">
+			</h1>
+		</div>
 	
  	<%
  	List<Viajes> listaViajes = new ArrayList<Viajes>();
@@ -21,15 +34,15 @@
  	
  	
 	<table summary="Listado De Paquetes De Viajes Disponibles">
-		<caption><b><u>Listado De Paquetes De Viajes Disponibles</u></b></caption>
+		<caption><img width="100%" src="img/viajesbanner1.png"></caption>
 		
 		
 		<thead>
 			<tr>
 				<th scope="col"></th>
-				<th scope="col">Viaje</th>
-				<th scope="col">Descripción</th>
-				<th scope="col">Reservar</th>
+				<th scope="col"><img width="100%" height="100%" src="img/destin.png"></th>
+				<th scope="col"><img src="img/descrip.png"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,5 +61,17 @@
 		<tfoot>
 		</tfoot>
 	</table>
+	
+		<div class="footer">
+		<a href="#">Aviso Legal | </a>
+		<a href="#">Privacidad |</a>
+		<b>Redes sociales:</b>
+		   Facebook <a href="https://www.facebook.com/ViajesNationalGeographic/" target="_blank">
+         <img alt="facebook.png" src="img/facebook.png"></a>
+		Instagram <a href="https://www.instagram.com/viajesAKA/" target="_blank">
+		<img alt="instagram.png" src="img/instagram.png"></a>
+		Twitter <a href="https://twitter.com/viajesAKA" target="_blank">
+		<img alt="twitter.png" src="img/twitter.png"></a>
+	</div>
 </body>
 </html>
