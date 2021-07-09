@@ -74,7 +74,7 @@
 		<%} %>
 	</table>
 	<%} %>
-	<% if(session.getAttribute("rol").equals("miembro"))  { %>
+	<% if(session.getAttribute("rol").equals("miembro")) { %>
 	
 	<form action="ServletEditarMiembro?opcion=e&id_miem=<%= usu.getId_miembro() %>" method="post">
 		
@@ -87,7 +87,7 @@
 		<label for="email">Email: </label>
 		<input type="text" class="input" name="email" value="<%= usu.getEmail()%>"><br>
 		<label for="rol">Rol: </label>
-		<input type="text" class="input" name="rol" value="<%= usu.getRol()%>"><br>
+		<input type="text" class="input" name="rol" disabled="disabled" value="<%= usu.getRol()%>"><br>
 		<label for="viajes_realizados">Viajes Realizados: </label>
 		<input type="text" class="input" name="viajes_realizados" value="<%= usu.getViajes_realizados()%>"><br>
 		
