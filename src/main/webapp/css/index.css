@@ -5,15 +5,18 @@ html {
   min-height: 100%;
   position: relative;
   width: 100%;
+  
 }
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 .topnav {
   overflow: hidden;
   background-color: #333;
+  
   
 }
 
@@ -57,7 +60,12 @@ h2 {
   color: #cccccc;
 }
 
-
+.imagen{
+	
+	
+	line-height:0;
+	
+}
 
 /* STRUCTURE */
 
@@ -257,6 +265,7 @@ input[type=text]:placeholder {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
+  
 }
 
 /* Simple CSS3 Fade-in Animation */
@@ -295,11 +304,42 @@ input[type=text]:placeholder {
   box-sizing: border-box;
 }
 
-.footer {
+
+  
+  /* Left and right column */
+.column.side {
+    width: 25%;
+  }
+  
+  /* Middle column */
+.column.middle {
+	padding: 50px;
+	text-align: center;
+    width: 30%;
+  }
+  
+ .buscador {
+    
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    border: 10px solid rgb(75, 80, 82);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 0 auto;
+    position: center;
+   
+    
+  }
+  
+ .prueba{
+ padding-left: 30px;
+ }
+  
+  .footer {
   background-color: #f1f1f1;
-  position: absolute;
-  bottom: 100;
-  width: 99%;
+  position: relative;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   height: 14px;
   }
