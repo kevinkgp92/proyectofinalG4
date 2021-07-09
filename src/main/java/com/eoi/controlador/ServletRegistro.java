@@ -22,7 +22,8 @@ public class ServletRegistro extends HttpServlet {
 		String contraseña = request.getParameter("contraseña");
 		String telefono = request.getParameter("telefono");
 		String email = request.getParameter("email");
-		String destPage="datosmiembros.jsp";
+		
+		String destPage="index.html";
 		
 		
 		Usuario user = new Usuario(nombre_miem, contraseña, telefono, email);

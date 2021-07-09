@@ -28,7 +28,7 @@
 	<nav>
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<% if(session.getAttribute("rol").equals("admin")){ %>
+			<% if(session.getAttribute("rol").equals("admin")) { %>
 			
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
 				
@@ -74,7 +74,7 @@
 		<%} %>
 	</table>
 	<%} %>
-	<% if(session.getAttribute("rol").equals("miembro")){ %>
+	<% if(session.getAttribute("rol").equals("miembro"))  { %>
 	
 	<form action="ServletEditarMiembro?opcion=e&id_miem=<%= usu.getId_miembro() %>" method="post">
 		

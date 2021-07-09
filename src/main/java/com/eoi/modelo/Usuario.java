@@ -37,6 +37,7 @@ public class Usuario {
 		this.telefono = telefono;
 		this.email = email;
 		
+		
 	}
 
 
