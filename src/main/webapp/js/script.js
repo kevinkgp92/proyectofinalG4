@@ -10,7 +10,7 @@ $(document).ready(function() {
         8 : ['Cualquier Provincia','Gerona', 'Lérida', 'Barcelona', 'Tarragona'],
         9 : ['Cualquier Provincia','Castellón', 'Valencia', 'Alicante'],
         10 : ['Cualquier Provincia','Cáceres', 'Badajoz'],
-        11 : ['Galicia'],
+        11 : ['Cualquier Provincia', 'A Coruña', 'Pontevedra', 'Ourense', 'Lugo'],
         12: ['La Rioja'],
         13: ['Madrid'],
         14: ['Murcia'],
