@@ -75,9 +75,8 @@ th, td {
 .footer {
   background-color: #f1f1f1;
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  bottom: 100;
+  width: 99%;
   text-align: center;
   height: 14px;
   }
-  
