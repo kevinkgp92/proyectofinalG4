@@ -9,9 +9,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Datos miembros</title>
+<link rel="stylesheet" href="css/tablaadmin.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<div class="topnav">
+			<a class="active" href="http://localhost:8080/proyectoFinal/index.html">INICIO</a> <a href="http://localhost:8080/proyectoFinal/sobrenosotros.html">SOBRE
+			NOSOTROS</a>
+			<a href="http://localhost:8080/proyectoFinal/infocovid.html">INFORMACIÓN COVID</a>
+	</div>
+	<h1>
+		<img width="100%" src="img/bannerlogin.png">
+	</h1>
 	<%
 		HttpSession sesion = request.getSession();
 		
@@ -23,11 +32,11 @@
 		
 	
 	%>
-	
-	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%> - <%=session.getAttribute("rol")%> </h2>
+	<div class="bienvenidouser">
+	<h2>Bienvenido <%=session.getAttribute("nombre_miem")%> - <%=session.getAttribute("rol")%> </h2></div>
 	<nav>
 		<ul>
-			<li><a href="index.html">Home</a></li>
+			
 			<% if(session.getAttribute("rol").equals("admin")) { %>
 			
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
@@ -37,22 +46,24 @@
 		</ul>
 	
 	</nav>
+	
 	<% if(session.getAttribute("rol").equals("admin")){ %>
 	<table>
-		<caption><b>Listado de miembros</b></caption>
+	<div class="table">
+		<h1><caption><b>Listado de miembros</b></caption></h1>
 		<tr>
-			<th>Id_miembro:</th>
-			<th>Nombre:</th>
-			<th>Contraseña:</th>
-			<th>Teléfono:</th>
-			<th>Email:</th>
-			<th>Rol:</th>
-			<th>Viajes Realizados:</th>
+			<th>Id_miembro</th>
+			<th>Nombre</th>
+			<th>Contraseña</th>
+			<th>Teléfono</th>
+			<th>Email</th>
+			<th>Rol</th>
+			<th>Viajes Realizados</th>
 			<% if(session.getAttribute("rol").equals("admin")){ %>
 				<th>Acciones</th>
 			<%} %>
 		</tr>
-		
+		</div>
 		<%
 			while(rs.next()){			
 		%>
@@ -73,9 +84,10 @@
 			
 		<%} %>
 	</table>
+	
 	<%} %>
 	<% if(session.getAttribute("rol").equals("miembro")) { %>
-	
+	<div class =formulariousuario>
 	<form action="ServletEditarMiembro?opcion=e&id_miem=<%= usu.getId_miembro() %>" method="post">
 		
 		<label for="nombre_miem">Nombre del Miembro:</label>
@@ -101,6 +113,7 @@
 		
 		%>
 	</form>
+	</div>
 	
 	<% } %>
 	<%
@@ -108,5 +121,16 @@
 	st.close();
 	rs.close();
 	%>
+	<div class="footer">
+		<a href="#">Aviso Legal | </a>
+		<a href="#">Privacidad |</a>
+		<b>Redes sociales:</b>
+		   Facebook <a href="https://www.facebook.com/ViajesNationalGeographic/" target="_blank">
+         <img alt="facebook.png" src="img/facebook.png"></a>
+		Instagram <a href="https://www.instagram.com/viajesAKA/" target="_blank">
+		<img alt="instagram.png" src="img/instagram.png"></a>
+		Twitter <a href="https://twitter.com/viajesAKA" target="_blank">
+		<img alt="twitter.png" src="img/twitter.png"></a>
+	</div>
 </body>
 </html>
