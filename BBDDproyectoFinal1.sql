@@ -31,7 +31,7 @@ CREATE TABLE `t_miembros` (
   `rol` varchar(45) DEFAULT 'miembro',
   `viajes_realizados` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id_miembro`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `t_miembros` (
 
 LOCK TABLES `t_miembros` WRITE;
 /*!40000 ALTER TABLE `t_miembros` DISABLE KEYS */;
-INSERT INTO `t_miembros` VALUES (1,'Kevin','1234','123','kevinkgp@gmail.com','admin','null'),(2,'Adrian','1234','121345678','adriannavarro@gmail.com','admin',NULL),(3,'Angela','1234','123456789','Angela@gmail.com','admin',NULL),(4,'Agapito','afdsafas','4532133452','agapito_89@gmail.com','miembro','Ninguno'),(5,'Julia Ponce Linares','1234','685437324','juliapl@gmail.com','miembro','null'),(6,'Paula García','1234','3456321341','paulag@gmail.com',NULL,NULL),(7,'Ismael','1234','456473849','isma@gmail.com',NULL,NULL),(8,'Patricia','1234','619876543','patricia_87@gmail.com','miembro','null'),(9,'Agapito','1234','654323432','agapito@gmail.com','miembro','null'),(10,'Rebeca Navarro','1234','5642834312','rebeca@gmail.com','miembro','null'),(11,'Rodrigo Jimenez','1234','541412313213','rodri@gmail.com',NULL,NULL),(12,'Regina Aguilar Linares','1234','604003543','regina@gmail.com','miembro','null'),(13,'Ferran','1234','619876453','ferran@gmail.com','miembro','Ninguno'),(14,'Laura Rodriguez','1234','547654897','laura@gmail.com',NULL,NULL),(15,'Margarette','1234','654876987','marga@gmail.com',NULL,NULL),(16,'Cristina','1234','56412312312','cristina@gmail.com',NULL,NULL),(17,'Roberto','1234','3214342324321','roberto@gmail.com',NULL,NULL),(18,'Angel','1234','213214141','angel@gmail.com','miembro',NULL),(19,'Javier','1234','1231232131231','javier@gmail.com',NULL,NULL),(20,'Adolfo','1234','123131412412','adolfo@gmail.com',NULL,NULL),(21,'Julio','1234','213124312412','julio@gmail.com','miembro','null');
+INSERT INTO `t_miembros` VALUES (1,'Kevin','1234','123','kevinkgp@gmail.com','admin','null'),(2,'Adrian','1234','121345678','adriannavarro@gmail.com','admin',NULL),(3,'Angela','1234','123456789','Angela@gmail.com','admin',NULL),(4,'Agapito','afdsafas','4532133452','agapito_89@gmail.com','miembro','Ninguno'),(5,'Julia Ponce Linares','1234','685437324','juliapl@gmail.com','miembro','null'),(6,'Paula García','1234','3456321341','paulag@gmail.com','miembro',NULL),(7,'Ismael','1234','456473849','isma@gmail.com','miembro',NULL),(8,'Patricia','1234','619876543','patricia_87@gmail.com','miembro','null'),(9,'Agapito','1234','654323432','agapito@gmail.com','miembro','null'),(10,'Rebeca Navarro','1234','5642834312','rebeca@gmail.com','miembro','null'),(11,'Rodrigo Jimenez','1234','541412313213','rodri@gmail.com','miembro',NULL),(12,'Regina Aguilar Linares','1234','604003543','regina@gmail.com','miembro','null'),(13,'Ferran','1234','619876453','ferran@gmail.com','miembro','Ninguno'),(14,'Laura Rodriguez','1234','547654897','laura@gmail.com','miembro',NULL),(15,'Margarette','1234','654876987','marga@gmail.com','miembro',NULL),(16,'Cristina','1234','56412312312','cristina@gmail.com','miembro',NULL),(17,'Roberto','1234','3214342324321','roberto@gmail.com','miembro',NULL),(18,'Angel','1234','213214141','angel@gmail.com','miembro',NULL),(19,'Javier','1234','1231232131231','javier@gmail.com','miembro',NULL),(20,'Adolfo','1234','123131412412','adolfo@gmail.com','miembro',NULL),(21,'Julio','1234','213124312412','julio@gmail.com','miembro','null'),(22,'Jaimito','1234','6435890321','jaimito@gmail.com','miembro',NULL);
 /*!40000 ALTER TABLE `t_miembros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-09 17:49:19
+-- Dump completed on 2021-07-09 19:25:51

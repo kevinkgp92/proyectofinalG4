@@ -42,7 +42,7 @@
 				<li><a href="altamiembro.jsp">Nuevo Miembro</a></li>
 				
 			<% } %>	
-			<li><a href = "Logout">Logout</a>
+			<li><a class="fadeIn fourth" href = "Logout">Logout</a>
 		</ul>
 	
 	</nav>
